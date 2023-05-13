@@ -21,7 +21,7 @@ public class RegistrationController {
 	
 	@PostMapping
 	public Accounts registerUser(@RequestBody Accounts account) {
-		if (accountRepository.findByUsername(account.getName() != null){
+		if (accountRepository.findByUsername(account.getName() != null)){
 
 		}
 		

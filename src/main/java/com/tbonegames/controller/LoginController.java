@@ -20,6 +20,8 @@ public class LoginController {
 	
 	@PostMapping
 	public Accounts loginUser(@RequestParam String username, @RequestParam String password) {
+		//This is used to bind Request parameters to method parameters. It is used to extract the values of individual
+		//request paramteres from the URL or form data. 
 		Accounts account = accountRepository.findByUsername(username);
 		
 		if (account == null) {

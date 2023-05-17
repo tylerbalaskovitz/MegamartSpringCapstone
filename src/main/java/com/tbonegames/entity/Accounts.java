@@ -64,7 +64,7 @@ public class Accounts {
 	
 	
 	//@ManyToMany and the @JoinAnnotation are combined together to allow tables to be joined together
-	//You can have different types of fetches, and you can cascade all the tables. Test again.Final test.
+	//You can have different types of fetches, and you can cascade all the tables. 
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(
 			name = "wishlist_table",

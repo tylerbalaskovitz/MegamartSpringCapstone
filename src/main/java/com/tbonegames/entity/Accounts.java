@@ -12,7 +12,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "accounts_table")
 public class Accounts {
@@ -49,6 +57,7 @@ public class Accounts {
 		this.email = email;
 	}
 
+
 	@Id
 	@Column(length = 15)
 	private String name;
@@ -67,7 +76,7 @@ public class Accounts {
 	//You can have different types of fetches, and you can cascade all the tables. 
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(
-			name = "wishlist_table",
+			name = "accounts_table",
 			joinColumns = {@JoinColumn(name = "wish_id", referencedColumnName="ID")},
 			inverseJoinColumns= {@JoinColumn(name="name", referencedColumnName="ID")})
 	private List<Accounts> accounts = new ArrayList<>();

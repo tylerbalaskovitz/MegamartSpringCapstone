@@ -62,12 +62,16 @@ public class Accounts {
 	@Column(length = 15)
 	private String email;
 	
+	
+	//@ManyToMany and the @JoinAnnotation are combined together to allow tables to be joined together
+	//You can have different types of fetches, and you can cascade all the tables. 
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(
 			name = "wishlist_table",
 			joinColumns = {@JoinColumn(name = "wish_id", referencedColumnName="ID")},
 			inverseJoinColumns= {@JoinColumn(name="name", referencedColumnName="ID")})
 	private List<Accounts> accounts = new ArrayList<>();
+	
 	
 	
 

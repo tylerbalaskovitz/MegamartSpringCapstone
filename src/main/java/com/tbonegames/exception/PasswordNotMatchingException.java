@@ -1,5 +1,9 @@
 package com.tbonegames.exception;
 
-public class PasswordNotMatchingException {
+public class PasswordNotMatchingException extends Exception{
 
+	public PasswordNotMatchingException(String message) {
+		super (message);
+	}
+	
 }
